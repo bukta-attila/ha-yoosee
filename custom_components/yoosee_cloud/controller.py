@@ -41,7 +41,7 @@ class Account:
         self._list: dict | None = None
         self._addr_lock = asyncio.Lock()
         self._addrs: dict[int, str] = {}
-        self._addr_at = 0.0
+        self._addr_at: float | None = None
         self.options = dict(entry.options)
         subentries = camera_subentries(entry)
         self.subentry_state = {sid: dict(s.data) for sid, s in subentries.items()}
@@ -82,7 +82,7 @@ class Account:
 
     async def address(self, dev_id: int, force: bool = False) -> str | None:
         async with self._addr_lock:
-            if force or time.monotonic() - self._addr_at > DISCOVERY_TTL_S:
+            if force or self._addr_at is None or time.monotonic() - self._addr_at > DISCOVERY_TTL_S:
                 try:
                     found = await local.discover(dev_id)
                 except OSError as e:

@@ -1,6 +1,7 @@
 import asyncio
 import time
 import unittest
+from unittest import mock
 
 from test_controller import _Entry, _Hass, ctl
 from yoosee_cloud import local
@@ -100,6 +101,11 @@ class SourceTest(unittest.TestCase):
 
         self.assertEqual(asyncio.run(run()), (local.rtsp_url(self.addr, "pw"),) * 2)
         self.assertEqual(self.calls, [DEV])
+
+    def test_discovers_right_after_boot(self):
+        _, c = self._ctrl()
+        with mock.patch.object(ctl.time, "monotonic", return_value=5.0):
+            self.assertEqual(asyncio.run(c.rtsp_url()), local.rtsp_url(self.addr, "pw"))
 
     def test_auto_falls_back_when_not_found(self):
         self.addr = None

@@ -1,6 +1,7 @@
 {
   "domain": "yoosee_cloud",
   "name": "Yoosee",
+  "categories": ["security_safety.cameras"],
   "codeowners": ["@bukta-attila"],
   "config_flow": true,
   "dependencies": ["http", "ffmpeg", "frontend", "panel_custom", "stream", "websocket_api"],

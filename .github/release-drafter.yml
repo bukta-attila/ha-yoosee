@@ -1,0 +1,30 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+categories:
+  - title: Added
+    labels:
+      - feature
+  - title: Fixed
+    labels:
+      - fix
+  - title: Changed
+    labels:
+      - change
+change-template: "- $TITLE (#$NUMBER)"
+version-resolver:
+  minor:
+    labels:
+      - feature
+  default: patch
+autolabeler:
+  - label: feature
+    title:
+      - "/^feat/i"
+  - label: fix
+    title:
+      - "/^fix/i"
+  - label: change
+    title:
+      - "/^(refactor|perf)/i"
+template: |
+  $CHANGES

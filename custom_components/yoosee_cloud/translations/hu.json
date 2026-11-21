@@ -1,0 +1,101 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Belépés a Yoosee-fiókba",
+        "description": "A Yoosee app e-mailes fiókja kell. Az itteni belépés kiléptetheti a telefonos appot.",
+        "data": {
+          "account": "E-mail",
+          "account_password": "Jelszó",
+          "login_region": "A fiók országa"
+        }
+      },
+      "devices": {
+        "title": "Kamerák",
+        "description": "Válaszd ki a hozzáadandó kamerákat.",
+        "data": {
+          "devices": "Kamerák",
+          "sidebar": "Visszanéző panel az oldalsávban"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Újra belépés",
+        "description": "Add meg {account} jelenlegi jelszavát.",
+        "data": {
+          "account_password": "Jelszó"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Hibás e-mail vagy jelszó.",
+      "cannot_connect": "A Yoosee felhő nem érhető el.",
+      "no_selection": "Válassz legalább egy kamerát."
+    },
+    "abort": {
+      "already_configured": "Ez a fiók már hozzá van adva.",
+      "no_devices": "Ebben a fiókban nincs kamera.",
+      "reauth_successful": "Sikeres újra belépés."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Fiók beállításai",
+        "description": "Az app-kulcsokat csak akkor írd át, ha a beépítettek nem működnek.",
+        "data": {
+          "sidebar": "Visszanéző panel az oldalsávban",
+          "app_id": "App ID",
+          "iot_video_app_id": "IoT video app ID",
+          "app_token": "App token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "A Yoosee felhő nem érhető el.",
+      "invalid_keys": "Ezekkel az app-kulcsokkal nem sikerült belépni. Mindhármat töltsd ki, vagy hagyd üresen."
+    }
+  },
+  "config_subentries": {
+    "camera": {
+      "initiate_flow": {
+        "user": "Kamera hozzáadása",
+        "reconfigure": "Kamera beállításai"
+      },
+      "entry_type": "Kamera",
+      "step": {
+        "user": {
+          "title": "Kamera hozzáadása",
+          "description": "Automatikus módban a kamera RTSP-képét használja, ha a helyi hálón elérhető, különben a felhőt. Ha az RTSP-jelszó üres, a felhőből kapott eszközjelszóval próbálkozik.",
+          "data": {
+            "device_id": "Kamera",
+            "live_source": "Élőkép forrása",
+            "rtsp_password": "RTSP-jelszó",
+            "live_cameras": "Másik kamera-entitás az élőképhez"
+          }
+        },
+        "reconfigure": {
+          "title": "Kamera: {camera}",
+          "description": "Automatikus módban a kamera RTSP-képét használja, ha a helyi hálón elérhető, különben a felhőt. Ha az RTSP-jelszó üres, a felhőből kapott eszközjelszóval próbálkozik.",
+          "data": {
+            "name": "Név",
+            "live_source": "Élőkép forrása",
+            "rtsp_password": "RTSP-jelszó",
+            "live_cameras": "Másik kamera-entitás az élőképhez"
+          }
+        }
+      },
+      "abort": {
+        "no_cameras": "Ebben a fiókban már minden kamera hozzá van adva."
+      }
+    }
+  },
+  "selector": {
+    "live_source": {
+      "options": {
+        "auto": "Automatikus",
+        "local": "Csak helyi (RTSP)",
+        "cloud": "Csak felhő"
+      }
+    }
+  }
+}

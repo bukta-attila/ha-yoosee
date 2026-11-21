@@ -1,0 +1,101 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Yoosee",
+        "description": "Use the e-mail account of the Yoosee app. Signing in here may sign the phone app out.",
+        "data": {
+          "account": "E-mail",
+          "account_password": "Password",
+          "login_region": "Account country"
+        }
+      },
+      "devices": {
+        "title": "Cameras",
+        "description": "Choose the cameras to add.",
+        "data": {
+          "devices": "Cameras",
+          "sidebar": "Show the playback panel in the sidebar"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "Enter the current password of {account}.",
+        "data": {
+          "account_password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong e-mail or password.",
+      "cannot_connect": "Could not reach the Yoosee cloud.",
+      "no_selection": "Choose at least one camera."
+    },
+    "abort": {
+      "already_configured": "This account is already added.",
+      "no_devices": "There is no camera on this account.",
+      "reauth_successful": "Signed in again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Account settings",
+        "description": "Change the app keys only if the built-in ones stop working.",
+        "data": {
+          "sidebar": "Show the playback panel in the sidebar",
+          "app_id": "App ID",
+          "iot_video_app_id": "IoT video app ID",
+          "app_token": "App token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the Yoosee cloud.",
+      "invalid_keys": "Sign-in with these app keys failed. Fill in all three or leave all empty."
+    }
+  },
+  "config_subentries": {
+    "camera": {
+      "initiate_flow": {
+        "user": "Add camera",
+        "reconfigure": "Camera settings"
+      },
+      "entry_type": "Camera",
+      "step": {
+        "user": {
+          "title": "Add camera",
+          "description": "Automatic uses the camera's RTSP stream when it answers on the local network, otherwise the cloud. Leave the RTSP password empty to try the device password from the cloud.",
+          "data": {
+            "device_id": "Camera",
+            "live_source": "Live view source",
+            "rtsp_password": "RTSP password",
+            "live_cameras": "Other camera entity for the live view"
+          }
+        },
+        "reconfigure": {
+          "title": "Camera: {camera}",
+          "description": "Automatic uses the camera's RTSP stream when it answers on the local network, otherwise the cloud. Leave the RTSP password empty to try the device password from the cloud.",
+          "data": {
+            "name": "Name",
+            "live_source": "Live view source",
+            "rtsp_password": "RTSP password",
+            "live_cameras": "Other camera entity for the live view"
+          }
+        }
+      },
+      "abort": {
+        "no_cameras": "Every camera on this account is already added."
+      }
+    }
+  },
+  "selector": {
+    "live_source": {
+      "options": {
+        "auto": "Automatic",
+        "local": "Local only (RTSP)",
+        "cloud": "Cloud only"
+      }
+    }
+  }
+}

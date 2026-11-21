@@ -1,0 +1,13 @@
+{
+  "domain": "yoosee_cloud",
+  "name": "Yoosee",
+  "codeowners": ["@bukta-attila"],
+  "config_flow": true,
+  "dependencies": ["http", "ffmpeg", "frontend", "panel_custom", "stream", "websocket_api"],
+  "documentation": "https://github.com/bukta-attila/ha-yoosee",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/bukta-attila/ha-yoosee/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

@@ -1,0 +1,44 @@
+DOMAIN = "yoosee_cloud"
+
+CONF_ACCOUNT = "account"
+CONF_ACCOUNT_PASSWORD = "account_password"
+CONF_LOGIN_REGION = "login_region"
+CONF_P2P = "p2p_session"
+CONF_DEVICES = "devices"
+CONF_DEVICE_ID = "device_id"
+CONF_LIVE = "live_cameras"
+CONF_SIDEBAR = "sidebar"
+CONF_SOURCE = "live_source"
+CONF_RTSP_PASSWORD = "rtsp_password"
+SOURCE_AUTO = "auto"
+SOURCE_LOCAL = "local"
+SOURCE_CLOUD = "cloud"
+SOURCES = (SOURCE_AUTO, SOURCE_LOCAL, SOURCE_CLOUD)
+KEY_FIELDS = ("app_id", "iot_video_app_id", "app_token")
+SUBENTRY_CAMERA = "camera"
+ENTRY_VERSION = 2
+
+PANEL_URL = "yoosee-cloud"
+PANEL_ELEMENT = "yoosee-cloud-panel"
+PANEL_VERSION = 14
+STATIC_URL = f"/{DOMAIN}_static"
+STREAM_URL = f"/api/{DOMAIN}/stream"
+LIVE_URL = f"/api/{DOMAIN}/live"
+SNAPSHOT_TTL_S = 300
+KEYFRAME_TIMEOUT_S = 10
+LIVE_QUEUE = 512
+LIVE_GOP_MAX = 4_000_000
+LIVE_AUDIO_WAIT_US = 1_500_000
+STREAM_URL_TTL_S = 300
+DISCOVERY_PORT = 8899
+DISCOVERY_TIMEOUT_S = 1.0
+DISCOVERY_TTL_S = 60
+RTSP_PORT = 554
+RTSP_FALLBACK_S = 300
+RTSP_SNAPSHOT_TTL_S = 10
+
+IDLE_CLIENT_S = 300
+IDLE_CALL_S = 60
+LIST_TTL_TODAY_S = 60
+LIST_TTL_PAST_S = 3600
+DAYLIST_SEARCH_DAYS = 5

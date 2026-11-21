@@ -11,6 +11,8 @@ Unofficial Home Assistant integration for Yoosee / Gwell cameras. Not affiliated
 
 It speaks the same cloud and local protocols as the Yoosee mobile app, so you do not need to set up RTSP or ONVIF separately.
 
+<p align="center"><img src="https://raw.githubusercontent.com/bukta-attila/ha-yoosee/main/images/demo.gif" alt="Live view and SD card playback" width="640"></p>
+
 ## Features
 
 - Live view (snapshot, HLS, WebRTC) with audio
